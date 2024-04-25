@@ -24,8 +24,18 @@ import (
 )
 
 func main() {
-	storageClient := storage_go.NewClient("https://<project-reference-id>.supabase.co/storage/v1", "<project-secret-api-key>", nil)
+	storageClient := storage_go.NewClient("https://<project-reference-id>.supabase.co/storage/v1", nil)
 }
+```
+
+### Set Api Key for your client
+```go
+  storageClient.SetApiKey("<project-secret-api-key>")
+```
+
+### Set Auth Token for your client
+```go
+  storageClient.SetAuthToken("<auth-token>")
 ```
 
 ### Handling resources
@@ -134,7 +144,7 @@ func main() {
 - Retrieve URLs for assets in public buckets:
 
 ```go
-  result, err := storageClient.GetPublicUrl("test", "book.pdf")
+  result := storageClient.GetPublicUrl("test", "book.pdf")
 ```
 
 - Create an signed URL and upload to signed URL:
