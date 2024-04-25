@@ -27,12 +27,6 @@ func main() {
 	storageClient := storage_go.NewClient("https://<project-reference-id>.supabase.co/storage/v1", nil)
 }
 ```
-
-### Set Api Key for your client
-```go
-  storageClient.SetApiKey("<project-secret-api-key>")
-```
-
 ### Set Auth Token for your client
 ```go
   storageClient.SetAuthToken("<auth-token>")
