@@ -81,7 +81,7 @@ func TestListFile(t *testing.T) {
 
 func TestCreateUploadSignedUrl(t *testing.T) {
 	c := storage_go.NewClient(rawUrl, map[string]string{})
-  c.SetApiKey(apiKey)
+  c.SetAuthToken(apiKey)
 	resp, err := c.CreateSignedUploadUrl("your-bucket-id", "book.pdf")
 
 	fmt.Println(resp, err)
@@ -89,7 +89,7 @@ func TestCreateUploadSignedUrl(t *testing.T) {
 
 func TestUploadToSignedUrl(t *testing.T) {
 	c := storage_go.NewClient(rawUrl, map[string]string{})
-  c.SetApiKey(apiKey)
+  c.SetAuthToken(apiKey)
 	file, err := os.Open("dummy.txt")
 	if err != nil {
 		panic(err)

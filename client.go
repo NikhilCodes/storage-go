@@ -62,12 +62,6 @@ func NewClient(rawUrl string, headers map[string]string) *Client {
 	return &c
 }
 
-// Sets api key header for subsequent requests
-func (c *Client) SetApiKey(apiKey string) *Client {
-  c.clientTransport.header.Set("apiKey", apiKey)
-  return c
-}
-
 // Sets authorization header for subsequent requests
 func (c *Client) SetAuthToken(authToken string) *Client {
   c.clientTransport.header.Set("Authorization", "Bearer "+authToken)
